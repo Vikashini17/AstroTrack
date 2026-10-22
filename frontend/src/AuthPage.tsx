@@ -16,9 +16,7 @@ export interface AuthSession {
 interface AuthPageProps {
   onAuthenticated: (session: AuthSession) => void;
 }
-
-const API = "http://localhost:5000/api/auth";
-
+const API =`${import.meta.env.VITE_API_URL}/api/auth`;
 function AuthPage({ onAuthenticated }: AuthPageProps) {
   const [mode, setMode] = useState<"login" | "register">("login");
   const [role, setRole] = useState<"user" | "admin">("user");
@@ -54,7 +52,7 @@ function AuthPage({ onAuthenticated }: AuthPageProps) {
 
   return (
     <main className="auth-page">
-      <div className="auth-stars" aria-hidden="true">✦　·　✧　　·　✦　　✧　·</div>
+      <div className="auth-stars" aria-hidden="true">✦·✧··</div>
       <section className="auth-card">
         <div className="auth-brand-mark">🌌</div>
         <p className="auth-eyebrow">SPACE • DATA • DISCOVERY</p>
